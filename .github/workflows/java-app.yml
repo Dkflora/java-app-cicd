@@ -51,15 +51,17 @@ jobs:
 
       - name: SonarQube Scan
         env:
-          SONAR_TOKEN: ${{ env.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ env.SONAR_HOST_URL }}
-        run: mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+           SONAR_TOKEN: ${{ env.SONAR_TOKEN }}
+           SONAR_HOST_URL: ${{ env.SONAR_HOST_URL }}
+        run: |
+           mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
              -Dsonar.projectKey=utc_app \
              -Dsonar.projectName=utc_app \
-             -Dsonar.host.url="${SONAR_HOST_URL}" \
-             -Dsonar.login="${SONAR_TOKEN}"
+             -Dsonar.host.url=${SONAR_HOST_URL} \
+             -Dsonar.login=${SONAR_TOKEN}
+
               
-             #     Build JAR
+#     Build JAR
 
 # Uncomment this job if you want JAR deployment
 # build:
