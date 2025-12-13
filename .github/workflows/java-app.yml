@@ -55,8 +55,8 @@ jobs:
            SONAR_HOST_URL: ${{ env.SONAR_HOST_URL }}
         run: |
            mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-             -Dsonar.projectKey=utc_app \
-             -Dsonar.projectName=utc_app \
+             -Dsonar.projectKey=utc_app2 \
+             -Dsonar.projectName=utc_app2 \
              -Dsonar.host.url=${SONAR_HOST_URL} \
              -Dsonar.login=${SONAR_TOKEN}
 
